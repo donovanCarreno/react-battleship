@@ -25,10 +25,10 @@ const generateShip = () => {
   if (direction === 1) {
     // horizontal
     row = Math.floor(Math.random() * boardSize)
-    col = Math.floor(Math.random() * (boardSize - (shipLength + 1)))
+    col = Math.floor(Math.random() * ((boardSize - shipLength) + 1))
   } else {
     // vertical
-    row = Math.floor(Math.random() * (boardSize - (shipLength + 1)))
+    row = Math.floor(Math.random() * ((boardSize - shipLength) + 1))
     col = Math.floor(Math.random() * boardSize)
   }
 
