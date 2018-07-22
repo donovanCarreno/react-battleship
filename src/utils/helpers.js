@@ -46,15 +46,17 @@ const generateShip = () => {
 }
 
 const collision = (locations, ships) => {
+  let collision = false
+  
   ships.forEach(ship => {
     locations.forEach(location => {
       if (ship.locations.indexOf(location) >= 0) {
-        return true
+        collision = true
       }
     })
   })
 
-  return false
+  return collision
 }
 
 export const parseGuess = (guess) => {
