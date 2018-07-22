@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 
 import styles from './styles.css'
 
-const Controls = ({ handleInput, handleSubmit }) => (
+const Controls = ({ guess, handleInput, handleSubmit }) => (
   <form className={styles.form}>
     <input
       className={styles.formInput}
       type='text'
       placeholder='A0'
       onChange={handleInput}
+      value={guess}
     />
     <button
       className={styles.formInput}
