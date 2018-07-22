@@ -7,7 +7,8 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.[hash].js',
+    publicPath: '/'
   },
   devtool: 'inline-source-map',
   module: {
@@ -32,18 +33,24 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: ['file-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     host: 'localhost',
     port: port,
     historyApiFallback: true,
-    open: true
+    open: true,
+    hot: true
   }
 }
